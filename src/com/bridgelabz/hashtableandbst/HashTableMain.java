@@ -2,8 +2,9 @@ package com.bridgelabz.hashtableandbst;
 
 public class HashTableMain {
     public static void main(String[] args) {
+
         HashTableImplementation<String, Integer> hashImpl = new HashTableImplementation<String, Integer>();
-        String message = "To be or not to be";
+        String message = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
 
         // Split the words when a white space comes up and Convert all the words in lowercase
         String[] messageArray = message.toLowerCase().split(" ");
@@ -19,6 +20,12 @@ public class HashTableMain {
                 value = value + 1;
             hashImpl.add(word, value);
         }
+        System.out.println(hashImpl);
+
+        //Remove "avoidable" from the hashtable
+        hashImpl.remove("avoidable");
+
+        //Display the hashtable
         System.out.println(hashImpl);
     }
 }
