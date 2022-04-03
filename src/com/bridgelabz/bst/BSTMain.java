@@ -26,5 +26,8 @@ public class BSTMain {
         //displaying
         System.out.println("Data in the format of left-root-right");
         obj.inorder();
+
+        //uc3 searching method calling
+        obj.search(40);
     }
 }
