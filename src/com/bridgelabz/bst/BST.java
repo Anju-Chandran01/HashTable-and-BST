@@ -1,11 +1,10 @@
 package com.bridgelabz.bst;
 
 public class BST {
+    public int count=0;
 
-    Node root;
-
-    // Node that defines Binary Search Tree
-    class Node {
+    // node that defines bst
+    static class Node {
         int key;
         Node left, right;
 
@@ -14,6 +13,8 @@ public class BST {
             left = right = null;
         }
     }
+
+    Node root;
 
     BST() {
         root = null;
@@ -25,7 +26,7 @@ public class BST {
     }
 
     Node insertRecursive(int key, Node root) {
-        // if empty
+        // if empty,insert as root
         if (root == null) {
             root = new Node(key);
             return root;
@@ -39,18 +40,22 @@ public class BST {
             root.right = insertRecursive(key, root.right);
         }
         return root;
+
     }
 
     // displaying in inorder
     void inorder() {
         inorderRecursive(root);
+        //for displaying count
+        System.out.println("\nCount of added element into tree is "+count);
     }
 
     void inorderRecursive(Node root) {
         if (root != null) {
-            inorderRecursive(root.left);
-            System.out.print(root.key + " ");
-            inorderRecursive(root.right);
+            count++;
+            inorderRecursive(root.left); //going through left node
+            System.out.print(root.key + " "); //going through root node
+            inorderRecursive(root.right); //going through right node
         }
     }
 }
